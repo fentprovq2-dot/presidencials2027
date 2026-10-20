@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Presidencials franceses 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Anàlisi d'Estat del Món sobre la crisi econòmica i social francesa i el camí del Rassemblement National cap a l'Elisi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: editorial single column (≈68ch) with a sticky table of contents in the left margin on wide screens; figures break out to the full content width. */
+:root{
+  --paper:#f2ece0; --paper-2:#e8dfcd; --card:#f8f4ec; --ink:#221c17; --ink-2:#5b5147; --ink-3:#877b6d;
+  --rule:#d4c8b4; --grey:#a89c8b; --garnet:#8b1f31; --garnet-soft:rgba(139,31,49,.11);
+  --petrol:#1c5962; --petrol-soft:rgba(28,89,98,.12);
+  --f-display:'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --f-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem; --s-6:2rem; --s-7:3rem; --s-8:4.5rem;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#181512; --paper-2:#221d19; --card:#1f1a16; --ink:#efe6d8; --ink-2:#bdb09f; --ink-3:#8b7f71;
+  --rule:#3a322b; --grey:#6c6258; --garnet:#e37a88; --garnet-soft:rgba(227,122,136,.15);
+  --petrol:#72b6bf; --petrol-soft:rgba(114,182,191,.15); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#181512; --paper-2:#221d19; --card:#1f1a16; --ink:#efe6d8; --ink-2:#bdb09f; --ink-3:#8b7f71;
+  --rule:#3a322b; --grey:#6c6258; --garnet:#e37a88; --garnet-soft:rgba(227,122,136,.15);
+  --petrol:#72b6bf; --petrol-soft:rgba(114,182,191,.15); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+body{background:var(--paper); color:var(--ink); font:400 1.0625rem/1.65 var(--f-body); -webkit-font-smoothing:antialiased}
+a{color:var(--petrol); text-decoration-thickness:1px; text-underline-offset:2px}
+a:hover{color:var(--garnet)}
+:focus-visible{outline:2px solid var(--petrol); outline-offset:2px; border-radius:2px}
+strong{font-weight:600}
+.num{font-family:var(--f-mono); font-variant-numeric:tabular-nums}
+
+/* progress */
+.progress{position:fixed; top:0; left:0; right:0; height:3px; z-index:30; padding-top:env(safe-area-inset-top,0px); pointer-events:none}
+.progress span{display:block; height:3px; width:0; background:var(--garnet)}
+
+.wrap{padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+.inner{max-width:1180px; margin:0 auto}
+
+/* masthead */
+.mast{border-bottom:1px solid var(--rule)}
+.mast .inner{display:flex; justify-content:space-between; align-items:baseline; gap:var(--s-4); padding-block:var(--s-4); flex-wrap:wrap}
+.brand{font:600 1.05rem/1 var(--f-display); letter-spacing:.01em; color:var(--ink)}
+.brand em{font-style:italic; font-weight:400; color:var(--garnet)}
+.kicker{font:500 .72rem/1.3 var(--f-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3)}
+
+/* hero */
+.hero .top{display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:var(--s-7); padding-block:var(--s-7) var(--s-6)}
+.figs{margin-bottom:var(--s-2)}
+.hero h1{font:600 clamp(2.1rem,4.6vw,3.6rem)/1.04 var(--f-display); letter-spacing:-.015em; margin:var(--s-3) 0 var(--s-4); text-wrap:balance; font-variation-settings:'opsz' 144}
+.hero h1 i{font-weight:400; color:var(--garnet)}
+.dek{font:400 1.2rem/1.5 var(--f-display); color:var(--ink-2); max-width:38ch; margin:0 0 var(--s-5)}
+.byline{font:400 .8rem/1.4 var(--f-mono); color:var(--ink-3); letter-spacing:.03em}
+.count{border-top:2px solid var(--ink); padding-top:var(--s-4); align-self:end}
+.count .big{font:600 4.2rem/1 var(--f-display); color:var(--garnet); font-variant-numeric:tabular-nums; font-variation-settings:'opsz' 144}
+.count p{margin:var(--s-2) 0 0; color:var(--ink-2); font-size:.95rem}
+.figs{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+.fig{padding:var(--s-4) var(--s-4) var(--s-4) 0; display:flex; flex-direction:column; gap:var(--s-1)}
+.fig + .fig{border-left:1px solid var(--rule); padding-left:var(--s-4)}
+.fig b{font:600 1.7rem/1.1 var(--f-display); font-variant-numeric:tabular-nums}
+.fig b.rn{color:var(--garnet)}
+.fig span{font-size:.82rem; color:var(--ink-2); line-height:1.4}
+
+/* body layout */
+.layout{display:grid; grid-template-columns:200px minmax(0,1fr); gap:var(--s-7); padding-block:var(--s-6) var(--s-8)}
+.toc{position:sticky; top:calc(env(safe-area-inset-top,0px) + 24px); align-self:start}
+.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; border-left:1px solid var(--rule)}
+.toc a{display:block; padding:4px 0 4px 12px; margin-left:-1px; border-left:2px solid transparent; color:var(--ink-3); text-decoration:none; font-size:.84rem; line-height:1.35}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink); border-left-color:var(--garnet); font-weight:500}
+.toc .kicker{display:block; margin-bottom:var(--s-3)}
+
+main{min-width:0}
+section{padding-block:var(--s-6); border-top:1px solid var(--rule); scroll-margin-top:24px}
+section:first-child{border-top:0; padding-top:0}
+.prose{max-width:68ch}
+h2{font:600 clamp(1.6rem,2.6vw,2.1rem)/1.15 var(--f-display); letter-spacing:-.01em; margin:var(--s-2) 0 var(--s-4); text-wrap:balance}
+h3{font:600 1.2rem/1.3 var(--f-display); margin:var(--s-5) 0 var(--s-2); text-wrap:balance}
+p{margin:0 0 var(--s-4)}
+.lead{font:400 1.22rem/1.55 var(--f-display); color:var(--ink)}
+.note{font-size:.84rem; color:var(--ink-3); line-height:1.5}
+.secnum{font:500 .72rem/1 var(--f-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--garnet)}
+
+/* conclusions */
+.concl{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s-4); margin-top:var(--s-5)}
+.concl div{border-top:2px solid var(--ink); padding-top:var(--s-3)}
+.concl h4{font:600 1.02rem/1.35 var(--f-display); margin:0 0 var(--s-2)}
+.concl p{font-size:.94rem; color:var(--ink-2); margin:0}
+
+/* figure frame */
+figure{margin:var(--s-5) 0; padding:var(--s-5); background:var(--card); border:1px solid var(--rule); border-radius:6px}
+figure h4{font:600 1.1rem/1.3 var(--f-display); margin:0 0 var(--s-1); text-wrap:balance}
+figure .sub{font-size:.86rem; color:var(--ink-2); margin:0 0 var(--s-4)}
+figcaption{font:400 .74rem/1.45 var(--f-mono); color:var(--ink-3); margin-top:var(--s-4); letter-spacing:.01em}
+
+/* range chart (1a volta) */
+.range{position:relative; display:grid; gap:10px; padding-top:24px}
+.rrow{display:grid; grid-template-columns:150px minmax(0,1fr) 72px; align-items:center; gap:var(--s-3); cursor:default}
+.rname{font-size:.9rem; line-height:1.2}
+.rname small{display:block; font-size:.74rem; color:var(--ink-3)}
+.track{position:relative; height:22px}
+.track .bar{position:absolute; top:6px; height:10px; border-radius:5px; background:var(--grey)}
+.track .bar.pt{width:10px!important; border-radius:50%}
+.rrow.rn .bar{background:var(--garnet)}
+.rval{font:500 .86rem/1 var(--f-mono); text-align:right; font-variant-numeric:tabular-nums}
+.rrow.rn .rval{color:var(--garnet)}
+.rrow:hover .rname, .rrow:focus-within .rname{text-decoration:underline; text-decoration-color:var(--rule)}
+.band{position:absolute; top:-24px; bottom:38px; background:var(--petrol-soft); border-left:1px dashed var(--petrol); border-right:1px dashed var(--petrol); pointer-events:none}
+.band span{position:absolute; top:5px; left:50%; transform:translateX(-50%); white-space:nowrap; font:500 .68rem/1 var(--f-mono); color:var(--petrol); letter-spacing:.02em; background:var(--card); padding:1px 5px}
+.axis{display:grid; grid-template-columns:150px minmax(0,1fr) 72px; gap:var(--s-3); margin-top:28px}
+.ticks{position:relative; height:16px; border-top:1px solid var(--rule)}
+.ticks span{position:absolute; top:4px; transform:translateX(-50%); font:400 .7rem/1 var(--f-mono); color:var(--ink-3)}
+.plot{position:absolute; inset:24px calc(72px + var(--s-3)) 0 calc(150px + var(--s-3)); pointer-events:none}
+
+/* duel */
+.seg{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:var(--s-4)}
+.seg button{font:500 .85rem/1 var(--f-body); padding:9px 13px; border-radius:999px; border:1px solid var(--rule); background:transparent; color:var(--ink); cursor:pointer}
+.seg button:hover{border-color:var(--ink-3)}
+.seg button[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.seg button:disabled{color:var(--ink-3); cursor:not-allowed; border-style:dashed}
+.duel{position:relative; height:54px; border-radius:4px; overflow:hidden; display:flex; background:var(--petrol)}
+.duel .l{background:var(--garnet); transition:width .5s cubic-bezier(.2,.7,.2,1); display:flex; align-items:center; padding-left:var(--s-3)}
+.duel .r{flex:1; display:flex; align-items:center; justify-content:flex-end; padding-right:var(--s-3)}
+.duel b{font:600 1.35rem/1 var(--f-display); color:var(--paper); font-variant-numeric:tabular-nums}
+.duel .unc{position:absolute; top:0; bottom:0; background:repeating-linear-gradient(135deg, rgba(255,255,255,.35) 0 3px, transparent 3px 7px); transition:left .5s, width .5s}
+.duel .half{position:absolute; top:-6px; bottom:-6px; left:50%; border-left:2px solid var(--ink); }
+.duelwrap{position:relative; padding-top:18px}
+.duelwrap .halflab{position:absolute; top:0; left:50%; transform:translateX(-50%); font:500 .68rem/1 var(--f-mono); color:var(--ink-2)}
+.duellabs{display:flex; justify-content:space-between; margin-top:var(--s-2); font-size:.86rem}
+.duellabs span:first-child{color:var(--garnet); font-weight:600}
+.duellabs span:last-child{color:var(--petrol); font-weight:600}
+.duelnote{margin:var(--s-3) 0 0; font-size:.92rem; color:var(--ink-2); min-height:3em}
+
+/* bullet lists */
+.reads{list-style:none; padding:0; margin:0; display:grid; gap:var(--s-3)}
+.reads li{padding-left:var(--s-4); border-left:2px solid var(--rule)}
+
+/* macro chart */
+.mac{display:grid; grid-template-columns:minmax(0,1fr); gap:var(--s-3)}
+.bars{position:relative; height:230px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s-5); align-items:end; border-bottom:1px solid var(--ink-3); padding:0 var(--s-4)}
+.col{position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center}
+.col .b{width:min(88px,70%); background:var(--grey); border-radius:3px 3px 0 0; transition:height .5s cubic-bezier(.2,.7,.2,1); position:relative}
+.col .b.hi{background:var(--garnet)}
+.col .b.proj{background:repeating-linear-gradient(135deg, var(--grey) 0 4px, transparent 4px 8px); border:1px solid var(--grey); border-bottom:0}
+.col .v{font:600 1.05rem/1 var(--f-display); margin-bottom:6px; font-variant-numeric:tabular-nums}
+.col .v.hi{color:var(--garnet)}
+.col .v small{display:block; font:400 .68rem/1.2 var(--f-mono); color:var(--ink-3); text-align:center; margin-top:3px}
+.whisk{position:absolute; left:50%; width:2px; background:var(--ink); transform:translateX(-50%)}
+.whisk::before,.whisk::after{content:""; position:absolute; left:-5px; width:12px; height:2px; background:var(--ink)}
+.whisk::before{top:0} .whisk::after{bottom:0}
+.ref{position:absolute; left:0; right:0; border-top:1.5px dashed var(--ink-2); pointer-events:none}
+.ref span{position:absolute; right:0; top:-18px; font:500 .7rem/1 var(--f-mono); color:var(--ink-2); background:var(--card); padding:0 4px}
+.xl{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s-5); padding:var(--s-2) var(--s-4) 0; text-align:center; font:500 .8rem/1.2 var(--f-mono); color:var(--ink-2)}
+
+/* gauge */
+.gauge{position:relative; height:16px; border-radius:8px; background:linear-gradient(90deg, var(--petrol-soft), var(--garnet-soft)); margin:44px 0 40px}
+.gauge .mk{position:absolute; top:-6px; bottom:-6px; width:2px; background:var(--ink-2)}
+.gauge .mk.now{background:var(--garnet); width:3px}
+.gauge .mk.lim{background:transparent; border-left:2px dashed var(--ink)}
+.gauge .mk span{position:absolute; left:50%; transform:translateX(-50%); white-space:nowrap; font:500 .72rem/1.25 var(--f-mono); color:var(--ink-2); text-align:center}
+.gauge .mk.top span{bottom:calc(100% + 4px)}
+.gauge .mk.bot span{top:calc(100% + 4px)}
+.gauge .mk.now span{color:var(--garnet); font-weight:600}
+.gauge .mk.lim span{left:auto; right:-2px; transform:none; text-align:right}
+
+/* stat tiles */
+.tiles{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--s-3); margin:var(--s-5) 0}
+.tile{padding:var(--s-4); background:var(--card); border:1px solid var(--rule); border-radius:6px; display:flex; flex-direction:column; gap:var(--s-1)}
+.tile b{font:600 1.6rem/1.05 var(--f-display); font-variant-numeric:tabular-nums}
+.tile b.neg{color:var(--garnet)}
+.tile span{font-size:.8rem; color:var(--ink-2); line-height:1.35}
+
+/* timeline */
+.filters{display:flex; gap:6px; flex-wrap:wrap; margin:var(--s-4) 0}
+.tl{list-style:none; margin:0; padding:0; position:relative}
+.tl::before{content:""; position:absolute; left:108px; top:6px; bottom:6px; width:1px; background:var(--rule)}
+.tl li{display:grid; grid-template-columns:96px minmax(0,1fr); gap:24px; padding:var(--s-3) 0; position:relative}
+.tl li::before{content:""; position:absolute; left:104px; top:20px; width:9px; height:9px; border-radius:50%; background:var(--paper); border:2px solid var(--ink-3)}
+.tl li[data-cat="just"]::before{border-color:var(--ink)}
+.tl li[data-cat="med"]::before{border-color:var(--garnet); background:var(--garnet)}
+.tl li[data-cat="son"]::before{border-color:var(--petrol); background:var(--petrol)}
+.tl li.future::before{border-style:dashed}
+.tl time{font:500 .78rem/1.3 var(--f-mono); color:var(--ink-2); padding-top:12px; text-align:right}
+.tl .ev{padding:var(--s-3) var(--s-4); border-radius:6px; background:var(--card); border:1px solid var(--rule); font-size:.94rem}
+.tl .ev .tag{font:500 .66rem/1 var(--f-mono); letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); display:block; margin-bottom:6px}
+.tl li[data-cat="med"] .tag{color:var(--garnet)}
+.tl li[data-cat="son"] .tag{color:var(--petrol)}
+.tl li.future .ev{background:transparent; border-style:dashed}
+.chip{font:500 .8rem/1 var(--f-body); padding:8px 12px; border-radius:999px; border:1px solid var(--rule); background:transparent; color:var(--ink); cursor:pointer; display:inline-flex; align-items:center; gap:7px}
+.chip i{width:8px; height:8px; border-radius:50%; display:inline-block; background:var(--ink)}
+.chip[data-f="med"] i{background:var(--garnet)} .chip[data-f="son"] i{background:var(--petrol)}
+.chip[aria-pressed="false"]{opacity:.5}
+.vs{display:grid; gap:8px; margin-top:var(--s-4)}
+.vs div{display:grid; grid-template-columns:130px minmax(0,1fr) 48px; gap:var(--s-3); align-items:center; font-size:.88rem}
+.vs .t{height:14px; background:var(--paper-2); border-radius:3px; overflow:hidden}
+.vs .t span{display:block; height:100%; background:var(--grey)}
+.vs .t span.hi{background:var(--garnet)}
+.vs b{font:500 .88rem/1 var(--f-mono); text-align:right}
+
+/* blocs */
+.blocs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s-4); margin:var(--s-5) 0}
+.bloc{border-top:3px solid var(--grey); padding-top:var(--s-3); font-size:.93rem}
+.bloc h3{margin-top:0}
+.bloc .who{list-style:none; padding:0; margin:0 0 var(--s-3); display:grid; gap:4px}
+.bloc .who li{display:flex; justify-content:space-between; gap:var(--s-3); border-bottom:1px dotted var(--rule); padding-bottom:3px}
+.bloc .who b{font:500 .85rem/1.4 var(--f-mono); white-space:nowrap}
+.bloc p{color:var(--ink-2)}
+
+/* ECFR */
+.ecfr-list{counter-reset:t; list-style:none; padding:0; margin:var(--s-4) 0; display:grid; gap:var(--s-3)}
+.ecfr-list li{counter-increment:t; display:grid; grid-template-columns:36px minmax(0,1fr); gap:var(--s-3)}
+.ecfr-list li::before{content:counter(t); font:600 1.4rem/1.1 var(--f-display); color:var(--petrol)}
+.verdict{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:var(--s-5); margin:var(--s-5) 0}
+.verdict > div{min-width:0}
+.verdict h3{margin-top:0; display:flex; align-items:center; gap:8px}
+.verdict .ok h3::before{content:"+"; font-family:var(--f-mono); color:var(--petrol)}
+.verdict .ko h3::before{content:"−"; font-family:var(--f-mono); color:var(--garnet)}
+.gap{border-left:2px solid var(--garnet); padding:0 0 0 var(--s-4); margin-bottom:var(--s-4)}
+.gap h4{font:600 .98rem/1.3 var(--f-body); margin:0 0 4px}
+.gap p{font-size:.93rem; color:var(--ink-2); margin:0}
+
+/* theses */
+.theses{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s-4); margin-top:var(--s-5)}
+.thesis{background:var(--card); border:1px solid var(--rule); border-radius:6px; padding:var(--s-5); display:flex; flex-direction:column}
+.thesis .n{font:600 2.2rem/1 var(--f-display); color:var(--garnet); font-variation-settings:'opsz' 144}
+.thesis h3{margin:var(--s-2) 0 var(--s-3)}
+.thesis p{font-size:.95rem; color:var(--ink-2)}
+.thesis .ref-out{margin-top:auto; padding-top:var(--s-3); border-top:1px dashed var(--rule); font-size:.86rem}
+.thesis .ref-out b{font:500 .7rem/1 var(--f-mono); letter-spacing:.07em; text-transform:uppercase; color:var(--petrol); display:block; margin-bottom:4px}
+
+/* scenarios */
+.scen{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s-4); margin-top:var(--s-5)}
+.sc{border:1px solid var(--rule); border-radius:6px; padding:var(--s-5); background:var(--card); display:flex; flex-direction:column; gap:var(--s-3)}
+.sc.d{border-style:dashed; background:transparent}
+.sc header{display:flex; justify-content:space-between; align-items:flex-start; gap:var(--s-3)}
+.sc h3{margin:0; font-size:1.12rem}
+.sc h3 span{color:var(--garnet); margin-right:4px}
+.like{display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex:none}
+.dots{display:flex; gap:3px}
+.dots i{width:9px; height:9px; border-radius:50%; border:1.5px solid var(--ink-2)}
+.dots i.f{background:var(--ink-2)}
+.like small{font:500 .68rem/1.1 var(--f-mono); color:var(--ink-2); text-align:right; letter-spacing:.03em}
+.sc dl{margin:0; display:grid; gap:var(--s-2); font-size:.9rem}
+.sc dt{font:500 .68rem/1 var(--f-mono); letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
+.sc dd{margin:2px 0 0; color:var(--ink-2)}
+.mini{height:10px; display:flex; border-radius:3px; overflow:hidden; background:var(--petrol); margin-top:auto}
+.mini span{background:var(--garnet)}
+.minilab{display:flex; justify-content:space-between; font:500 .72rem/1 var(--f-mono); color:var(--ink-2)}
+
+/* calendar */
+.cal{position:relative; margin:var(--s-6) 0 var(--s-3); height:64px}
+.cal .line{position:absolute; left:0; right:0; top:30px; height:2px; background:var(--rule)}
+.cal .cass{position:absolute; top:26px; height:10px; background:var(--garnet-soft); border-radius:5px}
+.cal .today{position:absolute; top:12px; bottom:14px; width:0; border-left:2px solid var(--petrol)}
+.cal .today span{position:absolute; top:-14px; left:-14px; font:500 .66rem/1 var(--f-mono); color:var(--petrol)}
+.cal button{position:absolute; top:19px; transform:translateX(-50%); width:24px; height:24px; border-radius:50%; border:2px solid var(--ink); background:var(--paper); font:600 .7rem/1 var(--f-mono); color:var(--ink); cursor:pointer; padding:0; display:grid; place-items:center}
+.cal button.vote{background:var(--garnet); border-color:var(--garnet); color:var(--paper)}
+.cal button.on,.cal button:hover{background:var(--ink); color:var(--paper)}
+.months{position:relative; height:16px}
+.months span{position:absolute; font:400 .68rem/1 var(--f-mono); color:var(--ink-3); transform:translateX(-50%)}
+.events{list-style:none; padding:0; margin:var(--s-5) 0 0; display:grid; gap:2px}
+.events li{display:grid; grid-template-columns:28px 150px minmax(0,1fr); gap:var(--s-3); padding:var(--s-3); border-radius:6px; transition:background .25s; align-items:start}
+.events li.on{background:var(--garnet-soft)}
+.events .k{width:24px; height:24px; border-radius:50%; border:2px solid var(--ink); display:grid; place-items:center; font:600 .7rem/1 var(--f-mono)}
+.events li.vote .k{background:var(--garnet); border-color:var(--garnet); color:var(--paper)}
+.events time{font:500 .8rem/1.4 var(--f-mono); color:var(--ink-2); padding-top:3px}
+.events b{display:block; font-weight:600; font-size:.95rem}
+.events span{font-size:.9rem; color:var(--ink-2)}
+
+/* sources */
+.src{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s-5); margin-top:var(--s-5)}
+.src h3{font:500 .74rem/1.2 var(--f-mono); text-transform:uppercase; letter-spacing:.08em; color:var(--ink-2); margin:0 0 var(--s-3)}
+.src ul{list-style:none; padding:0; margin:0; display:grid; gap:var(--s-2); font-size:.86rem; line-height:1.4}
+.src li{min-width:0; overflow-wrap:anywhere}
+
+footer{border-top:1px solid var(--rule)}
+footer .inner{padding-block:var(--s-5); display:flex; justify-content:space-between; gap:var(--s-4); flex-wrap:wrap}
+
+/* responsive */
+@media (max-width:1020px){
+  .layout{grid-template-columns:minmax(0,1fr); gap:0}
+  .toc{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--paper); margin:0 calc(-1 * max(16px, env(safe-area-inset-left,0px))); padding:var(--s-2) max(16px, env(safe-area-inset-left,0px)); border-bottom:1px solid var(--rule); overflow-x:auto; scrollbar-width:none}
+  .toc::-webkit-scrollbar{display:none}
+  .toc .kicker{display:none}
+  .toc ol{flex-direction:row; border-left:0; gap:4px; width:max-content}
+  .toc a{border-left:0; border-bottom:2px solid transparent; padding:6px 8px; margin:0; white-space:nowrap}
+  .toc a.on{border-bottom-color:var(--garnet)}
+  body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:25; background:var(--paper)}
+  section{scroll-margin-top:64px}
+  main{padding-top:var(--s-5)}
+}
+@media (max-width:820px){
+  .hero .top{grid-template-columns:minmax(0,1fr); gap:var(--s-5)}
+  .figs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fig:nth-child(3){border-left:0; padding-left:0}
+  .fig:nth-child(n+3){border-top:1px solid var(--rule)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .blocs,.src{grid-template-columns:minmax(0,1fr)}
+  .verdict,.theses,.scen,.concl{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  body{font-size:1rem}
+  figure{padding:var(--s-4)}
+  .rrow,.axis{grid-template-columns:100px minmax(0,1fr) 58px; gap:var(--s-2)}
+  .plot{inset:0 calc(58px + var(--s-2)) 0 calc(100px + var(--s-2))}
+  .rname small{display:none}
+  .band span{font-size:.6rem}
+  .bars{gap:var(--s-3); padding:0}
+  .xl{gap:var(--s-3); padding:var(--s-2) 0 0}
+  .tl::before{left:8px} .tl li{grid-template-columns:minmax(0,1fr); gap:4px; padding-left:28px}
+  .tl li::before{left:4px; top:6px} .tl time{text-align:left; padding-top:0}
+  .events li{grid-template-columns:28px minmax(0,1fr)} .events time{grid-column:2} .events li > div{grid-column:2}
+  .vs div{grid-template-columns:90px minmax(0,1fr) 40px}
+  .count .big{font-size:3.2rem}
+  .cal button{width:20px; height:20px; top:21px; font-size:.62rem}
+}
+</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="progress" aria-hidden="true"><span id="prog"></span></div>
+
+<header class="mast wrap">
+  <div class="inner">
+    <span class="brand">Estat <em>del</em> Món</span>
+    <span class="kicker">Anàlisi · França · Eleccions</span>
+  </div>
+</header>
+
+<div class="hero wrap">
+  <div class="inner top">
+    <div>
+      <span class="kicker">Presidencials franceses de 2027</span>
+      <h1>La crisi econòmica i social, i el camí del <i>Rassemblement National</i> cap a l'Elisi</h1>
+      <p class="dek">Un país estancat, un ajust de 54.000 milions sense mandat i un sistema de partits fragmentat davant un bloc sobiranista unificat.</p>
+      <div class="byline">20 d'octubre de 2026 · Dades fins al 20 d'octubre de 2026</div>
+    </div>
+    <div class="count" aria-live="polite">
+      <div class="big num" id="days">180</div>
+      <p><span id="daysLabel">dies</span> per a la primera volta, el <strong>18 d'abril de 2027</strong>. Segona volta: 2 de maig.</p>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="figs">
+      <div class="fig"><b class="rn">32–36%</b><span>Marine Le Pen a la primera volta (sondejos d'octubre)</span></div>
+      <div class="fig"><b>15–19%</b><span>Forquilla de l'empat a tres per la segona plaça</span></div>
+      <div class="fig"><b>54.000 M€</b><span>Esforç d'ajust del pressupost 2027</span></div>
+      <div class="fig"><b>&gt;120 pb</b><span>Diferencial del bo francès a 10 anys davant l'alemany</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="inner layout">
+  <nav class="toc" aria-label="Seccions">
+    <span class="kicker">Continguts</span>
+    <ol>
+      <li><a href="#resum">Resum</a></li>
+      <li><a href="#tauler">El tauler</a></li>
+      <li><a href="#economia">Crisi econòmica</a></li>
+      <li><a href="#social">Crisi social</a></li>
+      <li><a href="#rn">El factor RN</a></li>
+      <li><a href="#forces">Les altres forces</a></li>
+      <li><a href="#ecfr">L'informe de l'ECFR</a></li>
+      <li><a href="#tesis">Sis tesis</a></li>
+      <li><a href="#escenaris">Escenaris</a></li>
+      <li><a href="#calendari">Calendari</a></li>
+      <li><a href="#fonts">Metodologia i fonts</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- RESUM -->
+    <section id="resum">
+      <div class="prose">
+        <span class="secnum">Resum executiu</span>
+        <h2>Una crisi de representació del cost de l'ajust</h2>
+        <p class="lead">A sis mesos de la primera volta de les eleccions presidencials franceses (18 d'abril de 2027), Marine Le Pen encapçala tots els sondejos amb un 31-36% i guanya els duels de segona volta. Però la victòria final del RN no està assegurada.</p>
+        <p>La tesi d'aquesta anàlisi és que la crisi francesa no és principalment una crisi de deute sinó una crisi de <strong>representació del cost de l'ajust</strong>: un país que s'estanca, amb el poder adquisitiu en retrocés i l'atur a l'alça, a qui se li demana un esforç de 54.000 milions d'euros per un govern sense majoria i que es troba al final del seu mandat.</p>
+        <p>El RN no guanya terreny perquè tingui un programa econòmic més creïble, sinó perquè és l'única força que no ha governat i que pot prometre alhora «ordre als comptes» i protecció social. Aquesta ambigüitat és la seva força electoral i, alhora, el seu punt més vulnerable davant els mercats.</p>
+      </div>
+      <div class="concl">
+        <div><h4>El RN té un sòl alt i un sostre incert.</h4><p>El sòl (30-35%) és sòlid i ha resistit l'afer Bardella; el sostre depèn de qui sigui l'adversari a la segona volta, amb resultats que van del 47-53% (davant Édouard Philippe) al 67-68% (davant Jean-Luc Mélenchon).</p></div>
+        <div><h4>La segona plaça és la veritable elecció.</h4><p>Philippe, Mélenchon i Glucksmann estan gairebé empatats al 15-19%; qui passi decidirà si la segona volta és competitiva o un plebiscit a favor del RN.</p></div>
+        <div><h4>L'economia empeny, però no determina.</h4><p>El retrocés del poder adquisitiu i l'atur alimenten el vot de protesta; la por a una crisi de deute pot, en canvi, mobilitzar un vot de seguretat.</p></div>
+        <div><h4>L'ECFR encerta en el diagnòstic europeu,</h4><p>però infravalora la restricció financera interna que limitaria un govern RN des del primer dia.</p></div>
+      </div>
+    </section>
+
+    <!-- TAULER -->
+    <section id="tauler">
+      <div class="prose">
+        <span class="secnum">01 · Sondejos</span>
+        <h2>El tauler a sis mesos</h2>
+        <p>El calendari és fix: primera volta el 18 d'abril i segona el 2 de maig de 2027, segons recull l'<a href="https://ecfr.eu/publication/if-marine-le-pen-wins-a-european-guide-to-a-far-right-france/">ECFR</a>. L'oferta, en canvi, encara es mou: el RN ja té candidata, l'esquerra socialdemòcrata acaba de designar Raphaël Glucksmann i el bloc central continua dividit entre Philippe i Attal.</p>
+      </div>
+
+      <figure aria-labelledby="f1t">
+        <h4 id="f1t">Le Pen dobla el segon; tres candidats es disputen la segona plaça entre el 15 i el 19%</h4>
+        <p class="sub">Intenció de vot a la primera volta, forquilla segons les configuracions de candidats provades (octubre de 2026)</p>
+        <div class="range" id="range" role="img" aria-label="Forquilles d'intenció de vot a la primera volta per candidat"></div>
+        <figcaption>Ifop-Fiducial (25-29 set.), Toluna-Harris Interactive (5-8 oct.), OpinionWay (13-14 oct.) i YouGov (15 oct.). El rang reflecteix configuracions diferents de candidats, no marges d'error. Fonts: <a href="https://lcp.fr/actualites/presidentielle-que-disent-les-sondages-sur-la-candidature-de-raphael-glucksmann-443701">LCP</a>, <a href="https://fr.euronews.com/2026/10/16/presidentielle-2027-raphael-glucksmann-progresse-dans-les-sondages-apres-sa-victoire-a-la-">Euronews</a>, <a href="https://www.epocinfo.fr/ep2027.php">EPOC Info</a>.</figcaption>
+      </figure>
+
+      <figure aria-labelledby="f2t">
+        <h4 id="f2t">Segona volta: el resultat depèn de qui s'enfronti a Le Pen</h4>
+        <p class="sub">Tria l'adversari per veure el duel segons els sondejos d'octubre</p>
+        <div class="seg" role="group" aria-label="Adversari de Le Pen" id="duelBtns">
+          <button type="button" id="d-philippe" data-k="philippe" aria-pressed="true">Édouard Philippe</button>
+          <button type="button" id="d-glucksmann" data-k="glucksmann" aria-pressed="false">Raphaël Glucksmann</button>
+          <button type="button" id="d-melenchon" data-k="melenchon" aria-pressed="false">Jean-Luc Mélenchon</button>
+          <button type="button" id="d-attal" disabled title="Duel no publicat">Gabriel Attal · no publicat</button>
+        </div>
+        <div class="duelwrap">
+          <span class="halflab">50%</span>
+          <div class="duel" id="duel" role="img" aria-label="Duel de segona volta">
+            <div class="l" id="duelL"><b id="duelLv">52,5%</b></div>
+            <div class="r"><b id="duelRv">47,5%</b></div>
+            <div class="unc" id="duelU"></div>
+            <div class="half"></div>
+          </div>
+        </div>
+        <div class="duellabs"><span>Marine Le Pen</span><span id="duelName">Édouard Philippe</span></div>
+        <p class="duelnote" id="duelNote"></p>
+        <figcaption>La barra mostra el punt mitjà de la forquilla; la zona ratllada, l'amplada de la forquilla entre sondejos. Mateixes fonts que el gràfic anterior.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <h3>Tres lectures ràpides</h3>
+        <ul class="reads">
+          <li><strong>Le Pen no baixa de l'entorn del 35%.</strong> L'OpinionWay li dona almenys un 35% en totes les hipòtesis; cap altre candidat supera el 19%.</li>
+          <li><strong>La segona plaça és un empat a tres.</strong> Per primer cop, Glucksmann iguala Mélenchon i Philippe al 15% (OpinionWay); Harris Interactive, en canvi, situa Mélenchon segon en totes les configuracions.</li>
+          <li><strong>L'adversari ho decideix tot.</strong> Davant Mélenchon, Le Pen superaria el 67%; davant un centrista o un socialdemòcrata, el marge baixa a uns 10 punts, amb el YouGov donant-li un 52-48 davant Philippe.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ECONOMIA -->
+    <section id="economia">
+      <div class="prose">
+        <span class="secnum">02 · Economia</span>
+        <h2>La crisi econòmica: estancament, deute i mercats</h2>
+        <p>França afronta la campanya amb una economia gairebé aturada i unes finances públiques que empitjoren en lloc de millorar. El dèficit previst per al 2026 ha pujat al 5,4% del PIB, quan la llei de finances l'havia fixat en el 5%, i el deute arribaria al 121,7% el 2027 (<a href="https://www.touteleurope.eu/economie-et-social/budget-2027-ce-qu-il-faut-retenir-des-mesures-annoncees-par-le-gouvernement-lecornu/">Toute l'Europe</a>).</p>
+      </div>
+
+      <figure aria-labelledby="macT">
+        <h4 id="macT">—</h4>
+        <p class="sub" id="macS">—</p>
+        <div class="seg" role="group" aria-label="Indicador" id="macBtns">
+          <button type="button" id="m-def" data-k="def" aria-pressed="true">Dèficit</button>
+          <button type="button" id="m-debt" data-k="debt" aria-pressed="false">Deute</button>
+          <button type="button" id="m-gdp" data-k="gdp" aria-pressed="false">Creixement</button>
+          <button type="button" id="m-unemp" data-k="unemp" aria-pressed="false">Atur</button>
+        </div>
+        <div class="mac">
+          <div class="bars" id="bars" role="img" aria-label="Indicador macroeconòmic per any"></div>
+          <div class="xl"><span>2025</span><span>2026</span><span>2027 (previsió)</span></div>
+        </div>
+        <figcaption id="macC">PLF 2027, Insee i govern francès.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p><strong>Creixement.</strong> L'Insee ha rebaixat la previsió del 2026 del 0,7% al 0,4% i parla de «despenjament» respecte dels veïns; el govern l'ha deixat en el 0,5% i espera un 1% el 2027 (<a href="https://fr.euronews.com/2026/09/11/croissance-la-france-a-la-traine-de-ses-voisins-europeens">Euronews</a>). L'OCDE preveu un 0,4% per a França davant l'1% de la zona euro.</p>
+        <p><strong>Pressupost 2027.</strong> El govern Lecornu va presentar l'1 d'octubre un projecte que vol baixar el dèficit al 5% amb un esforç de 54.000 milions, 43.000 dels quals en mesures noves. La càrrega d'interessos de l'Estat passaria d'uns 79.000 a 91.000 milions (<a href="https://www.lafinancepourtous.com/2026/10/08/projet-de-loi-de-finances-le-budget-2027-sous-haute-tension/">La finance pour tous</a>). El 9 d'octubre, la comissió de finances de l'Assemblea en va rebutjar la primera part per 31 vots contra 3 (<a href="https://dettedelafrance.fr/">dettedelafrance.fr</a>).</p>
+        <p><strong>Mercats i qualificació.</strong> El diferencial del bo francès a 10 anys respecte de l'alemany ha passat d'uns 55 punts bàsics al febrer a més de 120 a l'octubre; els no residents tenen prop del 57% del deute (<a href="https://www.optionfinance.fr/analyses/le-spread-oat-bund-une-question-francaise-aux-consequences-europeennes.html">Option Finance / Allianz GI</a>). L'Agència France Trésor ha col·locat títols al 4,90% a principis d'octubre (<a href="https://selectra.info/finance/actualites/marche/moody-note-france-23-octobre-credit-immobilier">Selectra</a>). Fitch i S&amp;P puntuen França amb A+; Moody's, l'última que la manté en la categoria Aa, revisa la nota aquest divendres 23 d'octubre amb perspectiva negativa.</p>
+      </div>
+
+      <figure aria-labelledby="gT">
+        <h4 id="gT">El diferencial OAT-Bund ha més que doblat en vuit mesos</h4>
+        <p class="sub">Punts bàsics de prima del bo francès a 10 anys sobre l'alemany</p>
+        <div class="gauge" role="img" aria-label="El diferencial ha passat de 55 punts bàsics al febrer a més de 120 a l'octubre; el llindar simbòlic és de 150">
+          <div class="mk bot" style="left:0%"><span>0</span></div>
+          <div class="mk top" style="left:34.4%"><span>Febrer 2026<br>≈55 pb</span></div>
+          <div class="mk now top" style="left:75%"><span>Octubre 2026<br>&gt;120 pb</span></div>
+          <div class="mk lim bot" style="left:93.75%"><span>Llindar simbòlic<br>150 pb</span></div>
+        </div>
+        <figcaption>Escala de 0 a 160 pb. <a href="https://www.optionfinance.fr/analyses/le-spread-oat-bund-une-question-francaise-aux-consequences-europeennes.html">Option Finance / Allianz GI</a>; llindar de 150 pb: criteri d'aquesta anàlisi.</figcaption>
+      </figure>
+
+      <div class="prose">
+        <p>La lectura de fons és que el marge polític s'està estrenyent més ràpid que el fiscal: el país no està en fallida, però cada punt de diferencial encareix el crèdit a famílies i empreses i redueix l'espai per a qualsevol promesa electoral.</p>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social">
+      <div class="prose">
+        <span class="secnum">03 · Societat</span>
+        <h2>La crisi social: poder adquisitiu, atur i carrer</h2>
+        <p>El cost de l'estancament recau sobre les llars. Segons l'Insee, França és l'únic país europeu on l'atur puja de manera significativa (<a href="https://www.economiematin.fr/?p=231688">Économie Matin, a partir de l'Insee</a>).</p>
+      </div>
+      <div class="tiles">
+        <div class="tile"><b class="neg">−0,4%</b><span>Poder adquisitiu de les llars el 2026 (Insee)</span></div>
+        <div class="tile"><b class="neg">−52.000</b><span>Llocs de treball assalariat perduts el 2026 (Insee)</span></div>
+        <div class="tile"><b>8,6%</b><span>Atur previst a final del 2026 (Insee)</span></div>
+        <div class="tile"><b>56%</b><span>Electors que posen el poder adquisitiu com a primera prioritat (Harris Interactive)</span></div>
+      </div>
+      <div class="prose">
+        <p>El xoc energètic vinculat al conflicte a l'Orient Mitjà ha fet rebrotar la inflació: l'Insee la situava en el 2,7% interanual per al desembre, quan abans era per sota de l'1%, i constatava que les llars paguen el gruix de la factura petroliera (<a href="https://www.boursorama.com/actualite-economique/actualites/france-l-insee-prevoit-un-regain-de-croissance-au-deuxieme-trimestre-d5699c3f5bba5395453f8560d3c9e29d">Boursorama / AFP</a>). Inflació que torna, salaris que no segueixen i ocupació que es contrau: és la combinació que més erosiona la confiança en els governs.</p>
+        <p><strong>El pressupost com a detonant.</strong> Els 54.000 milions d'ajust inclouen mesures sobre famílies, pensions i funció pública. Després d'una mobilització del sector públic el 29 de setembre, la intersindical (CFDT, CGT, FO, UNSA, FSU) ha convocat una vaga interprofessional per al 5 de novembre (<a href="https://www.economiematin.fr/?p=233381">Économie Matin</a>). Les xifres de participació d'aquesta font són sindicals i caldrà contrastar-les amb les del Ministeri de l'Interior.</p>
+        <p><strong>El que diu l'electorat.</strong> Segons el sondeig Toluna-Harris Interactive del 5-8 d'octubre, el 56% dels electors situa el poder adquisitiu com a primera prioritat (<a href="https://www.economiematin.fr/?p=233995">Économie Matin</a>). No és el deute ni la immigració el tema dominant, sinó la vida quotidiana; i és en aquest terreny on el RN se sent més còmode, com observa l'ECFR.</p>
+        <p>Aquesta crisi social té un tret singular: les mobilitzacions són contra l'austeritat, però el beneficiari electoral no és l'esquerra sindical, sinó el partit que capitalitza el rebuig a tot el sistema.</p>
+      </div>
+    </section>
+
+    <!-- RN -->
+    <section id="rn">
+      <div class="prose">
+        <span class="secnum">04 · Rassemblement National</span>
+        <h2>El factor RN: jutges, duo i escàndol</h2>
+        <p class="lead">El RN arriba a la campanya havent superat dos obstacles que semblaven decisius, i això és, en si mateix, un indicador de la solidesa del seu electorat.</p>
+      </div>
+
+      <figure aria-labelledby="tlT">
+        <h4 id="tlT">Dos obstacles superats en divuit mesos</h4>
+        <p class="sub">Cronologia judicial i de l'afer Mediapart. Filtra per tipus:</p>
+        <div class="filters" role="group" aria-label="Filtre de la cronologia">
+          <button type="button" class="chip" id="f-just" data-f="just" aria-pressed="true"><i></i>Justícia</button>
+          <button type="button" class="chip" id="f-med" data-f="med" aria-pressed="true"><i></i>Afer Mediapart</button>
+          <button type="button" class="chip" id="f-son" data-f="son" aria-pressed="true"><i></i>Sondejos</button>
+        </div>
+        <ol class="tl" id="tl">
+          <li data-cat="just"><time>31 mar. 2025</time><div class="ev"><span class="tag">Justícia</span>Le Pen és condemnada per malversació de fons del Parlament Europeu amb cinc anys d'inelegibilitat d'execució immediata.</div></li>
+          <li data-cat="just"><time>7 jul. 2026</time><div class="ev"><span class="tag">Justícia</span>El Tribunal d'Apel·lació de París redueix la pena a 45 mesos d'inelegibilitat, 30 dels quals amb suspensió condicional, i un any de polsera electrònica (<a href="https://www.parismatch.be/actualites/monde/2026/07/07/marine-le-pen-condamnee-a-15-mois-ferme-dineligibilite-et-un-an-de-bracelet-electronique-K23HT444CZB4TK7AI7QZLWSCFA/">Paris Match / AFP</a>). Com que la part ferma ja s'havia complert des del març de 2025, pot presentar-se (<a href="https://www.europe1.fr/node/967896">Europe 1</a>).</div></li>
+          <li data-cat="med"><time>28 set. 2026</time><div class="ev"><span class="tag">Afer Mediapart</span>Mediapart atribueix a Bardella escrits antisemites i conspiratius en converses privades del 2013-2015, quan tenia 17-19 anys (<a href="https://fr.euronews.com/2026/09/28/mediapart-attribue-a-jordan-bardella-des-ecrits-antisemites-le-president-du-rn-denonce-des">Euronews</a>). Bardella ho nega i presenta querelles per difamació i per falsedat.</div></li>
+          <li data-cat="med"><time>1 i 9 oct. 2026</time><div class="ev"><span class="tag">Afer Mediapart</span>Mediapart publica proves addicionals, entre les quals converses de Messenger obtingudes de Meta i coincidències amb el seu compte de Twitter (<a href="https://fr.euronews.com/2026/10/09/mediapart-apporte-de-nouvelles-preuves-liant-jordan-bardella-aux-ecrits-antisemites-sur-me">Euronews</a>). El ministre de Justícia, Gérald Darmanin, l'acusa de mentir. La qüestió judicial no està resolta i cal mantenir la presumpció d'innocència.</div></li>
+          <li data-cat="son"><time>12 oct. 2026</time><div class="ev"><span class="tag">Sondeig</span>L'afer no frena el RN: el 51% dels francesos creu que Le Pen seria una bona presidenta, 6 punts més que a l'inici de l'estiu, davant el 47% de Bardella (<a href="https://fr.news.yahoo.com/presidentielle-2027-nouveau-sondage-place-083408974.html">Yahoo / Harris Interactive</a>).
+            <div class="vs" aria-label="Percentatge que creu que seria una bona presidenta o president">
+              <div><span>Marine Le Pen</span><span class="t"><span class="hi" style="width:51%"></span></span><b>51%</b></div>
+              <div><span>Jordan Bardella</span><span class="t"><span style="width:47%"></span></span><b>47%</b></div>
+            </div></div></li>
+          <li data-cat="just" class="future"><time>Fins a abr. 2027</time><div class="ev"><span class="tag">Justícia · pendent</span>Le Pen ha recorregut en cassació, i la pena queda suspesa fins que el tribunal resolgui, cosa que podria passar fins a l'abril de 2027 (<a href="https://ecfr.eu/publication/if-marine-le-pen-wins-a-european-guide-to-a-far-right-france/">ECFR</a>). Una decisió en plena campanya reobriria el debat sobre la seva legitimitat.</div></li>
+        </ol>
+      </figure>
+
+      <div class="prose">
+        <p><strong>El duo.</strong> Le Pen ha promès fer primer ministre Jordan Bardella. L'ECFR hi veu una fórmula per ampliar la coalició electoral: ella reté el vot obrer del nord i el vot identitari mediterrani; ell connecta amb un electorat més jove, burgès i econòmicament liberal. Les diferències són reals: sobre Rússia, sobre les pensions i sobre la relació amb Alemanya.</p>
+        <p><strong>L'efecte electoral, gairebé nul.</strong> La paradoxa: l'escàndol erosiona el delfí i reforça la matriarca, cosa que confirma la tesi de l'ECFR sobre la centralitat de Le Pen.</p>
+      </div>
+    </section>
+
+    <!-- FORCES -->
+    <section id="forces">
+      <div class="prose">
+        <span class="secnum">05 · Adversaris</span>
+        <h2>Les altres forces: un sistema fragmentat</h2>
+        <p>El problema dels adversaris del RN no és la feblesa individual sinó la dispersió: cada bloc té dos o més aspirants per a una sola plaça a la segona volta.</p>
+      </div>
+      <div class="blocs">
+        <div class="bloc">
+          <h3>El bloc central</h3>
+          <ul class="who"><li><span>Édouard Philippe</span><b>15–18%</b></li><li><span>Gabriel Attal</span><b>11%</b></li></ul>
+          <p>Philippe (Horitzons) és candidat des del setembre de 2024; Attal (Renaissance) va anunciar-se el maig de 2026. Tots dos han pactat retirar-se a favor del més ben situat a principis de 2027 (<a href="https://www.europe1.fr/politique/presidentielle-2027-le-duel-attal-philippe-peut-il-profiter-a-bruno-retailleau-938282">Europe 1</a>), però Philippe rebutja una primària i la rivalitat ha passat de les idees a l'organització. Philippe porta l'avantatge: un 19,5% davant el 13,5% d'Attal al sondeig Cluster 17 de setembre (<a href="https://www.publicsenat.fr/actualites/politique/sondage-presidentielle-2027-marine-le-pen-largement-en-tete-suivi-de-jean-luc-melenchon-et-edouard-philippe-a-egalite">Public Sénat</a>). El seu llast és l'herència: representa la continuïtat d'un decenni que el país associa a l'estancament.</p>
+        </div>
+        <div class="bloc">
+          <h3>L'esquerra</h3>
+          <ul class="who"><li><span>Jean-Luc Mélenchon</span><b>15–19%</b></li><li><span>Raphaël Glucksmann</span><b>12,5–16%</b></li></ul>
+          <p>El projecte d'una candidatura unitària sense LFI va fracassar quan els militants socialistes van optar per una primària tancada, desautoritzant Olivier Faure (<a href="https://www.europe1.fr/node/969987">Europe 1</a>). Glucksmann la va guanyar a la primera volta l'11 d'octubre i ha descartat qualsevol acord amb LFI. Els ecologistes de Marine Tondelier i els antics insubmisos Ruffin i Autain segueixen el seu propi camí. Mélenchon, candidat per quarta vegada, conserva un electorat fidel del 15-19%.</p>
+        </div>
+        <div class="bloc">
+          <h3>La dreta clàssica</h3>
+          <ul class="who"><li><span>Bruno Retailleau</span><b>7–9%</b></li></ul>
+          <p>La seva funció real és més de pivot que de competidor: el seu electorat és decisiu per a una segona volta Philippe-Le Pen, i la tesi de la «unió de les dretes», defensada per Ciotti i Maréchal, el pressiona des de la dreta.</p>
+        </div>
+      </div>
+      <div class="prose">
+        <p>En conjunt, el sistema reprodueix la lògica dels tres blocs del 2022, però agreujada: un bloc sobiranista unificat davant dos blocs dividits internament. La diferència és que el bloc unificat ja no està al 20%, sinó a prop del 35%.</p>
+      </div>
+    </section>
+
+    <!-- ECFR -->
+    <section id="ecfr">
+      <div class="prose">
+        <span class="secnum">06 · Lectura crítica</span>
+        <h2>L'informe de l'ECFR</h2>
+        <p><a href="https://ecfr.eu/publication/if-marine-le-pen-wins-a-european-guide-to-a-far-right-france/"><em>If Marine Le Pen wins: A European guide to a far-right France</em></a> (Célia Belin, Jeremy Cliffe, Camille Lons i Constance Victor, 4 d'agost de 2026) és la segona edició d'un text del juny pensat per a un Bardella candidat. Es basa en entrevistes amb dirigents del RN i en l'anàlisi de programes i votacions.</p>
+        <h3>Les cinc tesis de l'ECFR, resumides</h3>
+        <ol class="ecfr-list">
+          <li><span>La candidatura de Le Pen reafirma la seva primacia; el «bardellisme» no existeix com a alternativa.</span></li>
+          <li><span>Una presidència RN seria una ruptura amb la UE: Comissió Europea reduïda a secretaria, retall de la contribució al pressupost europeu (de 2.000-3.000 milions fins a la meitat), sortida del mercat elèctric comú, defensa nacional per damunt de l'OTAN.</span></li>
+          <li><span>La inexperiència en política exterior faria de França un soci erràtic, més bloquejador que iniciador, sobretot en una crisi al flanc oriental.</span></li>
+          <li><span>El partit està travessat per dos debats: moviment o coalició de dretes, i sobirania anti-Washington i anti-Brussel·les (Le Pen) o europeïsme identitari (Bardella).</span></li>
+          <li><span>El resultat més probable seria una França més aïllada en una UE més feble, sense que n'emergeixi una internacional coherent d'extrema dreta.</span></li>
+        </ol>
+      </div>
+      <div class="verdict">
+        <div class="ok">
+          <h3>On l'informe encerta</h3>
+          <p>La lectura de la dinàmica interna és sòlida i s'ha vist confirmada a l'octubre: l'afer Mediapart ha debilitat Bardella i ha reforçat Le Pen. També és encertat el rebuig de les analogies fàcils amb Meloni, Orbán o Trump, i l'advertència que la complaença és un risc més gran que el pànic.</p>
+        </div>
+        <div class="ko">
+          <h3>On l'informe es queda curt</h3>
+          <div class="gap"><h4>La restricció financera</h4><p>L'ECFR esmenta el deute de passada. Però amb un diferencial per damunt de 120 punts bàsics, el 57% del deute en mans de no residents i un procediment europeu per dèficit excessiu que, segons la recomanació del Consell de gener de 2025, fixa el 2029 com a termini per tornar sota el 3%, la primera negociació d'un govern RN no seria amb Brussel·les, sinó amb els mercats. L'instrument antifragmentació del BCE (TPI) exigeix complir les regles fiscals europees: és una palanca de disciplina que l'informe no analitza.</p></div>
+          <div class="gap"><h4>La cohabitació</h4><p>L'informe pressuposa una presidència amb capacitat de governar. Però Le Pen pot guanyar l'Elisi i no tenir majoria a l'Assemblea; caldria, com a mínim, unes legislatives anticipades. La Constitució limita el que un president pot fer sol, especialment en matèria de «preferència nacional», que el Consell Constitucional podria tombar.</p></div>
+          <div class="gap"><h4>El vot econòmic</h4><p>L'informe se centra en la política exterior i europea, on el RN és feble, i dedica poc espai a la pregunta clau per entendre per què pot guanyar: per què un electorat preocupat pel poder adquisitiu confia en un partit sense experiència de govern.</p></div>
+        </div>
+      </div>
+      <div class="prose">
+        <p>El complement natural és l'article de Paweł Zerka, <a href="https://ecfr.eu/article/unlikely-europeans-the-hidden-voters-who-could-sway-frances-presidential-election/"><em>Unlikely Europeans</em></a> (8 d'octubre), basat en prop de 6.000 entrevistes. Mostra que els francesos són els més pessimistes sobre Europa dels sis països estudiats (12% de visions positives), però que una vuitena part de l'electorat del RN és «incert» sobre Europa i sensible a la seguretat: una escletxa que els adversaris podrien explotar.</p>
+      </div>
+    </section>
+
+    <!-- TESIS -->
+    <section id="tesis">
+      <div class="prose">
+        <span class="secnum">07 · Anàlisi pròpia</span>
+        <h2>Sis tesis sobre crisi i vot</h2>
+        <p>Aquestes tesis són interpretacions argumentades a partir de les dades anteriors, no prediccions. Cadascuna indica què la podria refutar.</p>
+      </div>
+      <div class="theses">
+        <article class="thesis"><span class="n">1</span><h3>Un ajust sense mandat</h3>
+          <p>El pressupost 2027 és el darrer del quinquenni, presentat per un govern en minoria, a sis mesos d'unes eleccions en què l'actual president Macron no es pot tornar a presentar. Demanar 54.000 milions d'esforç en aquestes condicions trenca el vincle entre sacrifici i legitimitat: ningú que el voti respondrà davant els electors. El malestar no es dirigeix, doncs, contra una política concreta, sinó contra el sistema que la produeix.</p>
+          <div class="ref-out"><b>Refutació possible</b>Si la vaga del 5 de novembre i la tramitació pressupostària afavoreixen l'esquerra sindical en els sondejos més que el RN.</div></article>
+        <article class="thesis"><span class="n">2</span><h3>La credibilitat ja no es mesura amb xifres</h3>
+          <p>El RN ha canviat de posició sobre l'euro, sobre l'OTAN i sobre les pensions, i el seu contrapressupost promet un dèficit del 4,8-5% el 2027 i del 3,7% el 2031, unes xifres que l'Institut de l'Entreprise posa en dubte (<a href="https://www.planetegrandesecoles.com/?p=130999">Planète Grandes Écoles</a>). El 2022, l'Institut Montaigne calculava que el programa de Le Pen augmentaria el dèficit en uns 102.000 milions anuals (<a href="https://www.institutmontaigne.org/presidentielle-2022/marine-le-pen/synthese/">Institut Montaigne</a>). Que aquestes contradiccions no pesin indica que l'electorat ja no castiga la incoherència programàtica: si cap dels que ha governat ha complert les seves xifres, la credibilitat es desplaça de la comptabilitat cap a la promesa de protecció.</p>
+          <div class="ref-out"><b>Refutació possible</b>Que un xoc de mercat durant la campanya concentri el debat en el deute i faci baixar el RN.</div></article>
+        <article class="thesis"><span class="n">3</span><h3>La normalització s'ha completat</h3>
+          <p>Dues proves ho mostren: la condemna judicial no va enfonsar Le Pen i l'afer Mediapart no ha erosionat el RN. Quan un partit esdevé immune a escàndols que haurien destruït d'altres candidatures, vol dir que el seu vot ja no és una adhesió a les persones, sinó un vot de ruptura. Això eleva el sòl del RN, però no necessàriament el sostre: la desdiabolització acceptada per una part de la dreta pot seguir sent inacceptable per al votant del centre.</p></article>
+        <article class="thesis"><span class="n">4</span><h3>L'adversari és la variable decisiva</h3>
+          <p>La distància entre un 67-68% de Le Pen davant Mélenchon i un 52% davant Philippe és de 15 punts. Això vol dir que el «front republicà» encara existeix, però només es mobilitza si l'alternativa és percebuda com a moderada. La competició per la segona plaça, doncs, és la veritable primera volta. El RN té un interès objectiu que Mélenchon passi; el centre i Glucksmann necessiten que la fragmentació es resolgui abans de març.</p></article>
+        <article class="thesis"><span class="n">5</span><h3>Els mercats com a actor de campanya</h3>
+          <p>El diferencial OAT-Bund s'ha convertit en un indicador polític. Pot jugar en dues direccions. Abans de les eleccions, una tensió forta podria activar un vot de por que afavorís els candidats percebuts com a garants de l'estabilitat, com va passar amb la moderació del RN a les legislatives del 2024. Després de les eleccions, seria una restricció dura: un govern RN que volgués revertir la reforma de les pensions o retallar impostos sobre l'energia hauria de finançar-se a uns tipus que no es veien des del 2008.</p></article>
+        <article class="thesis"><span class="n">6</span><h3>Europa travessa els blocs, no els separa</h3>
+          <p>El 2017, Europa dividia França en dos camps. El 2027, segons l'ECFR, el pessimisme europeu és transversal i hi ha votants pro-europeus a LFI i votants inquiets per la seguretat al RN. La pregunta electoral no serà «més o menys Europa», sinó «qui pot protegir França en un continent en guerra». És aquí on la posició ambigua de Le Pen sobre Rússia i Ucraïna és més vulnerable.</p></article>
+      </div>
+    </section>
+
+    <!-- ESCENARIS -->
+    <section id="escenaris">
+      <div class="prose">
+        <span class="secnum">08 · Prospectiva</span>
+        <h2>Escenaris</h2>
+        <p>L'escenari central és una segona volta amb Le Pen contra un candidat moderat amb un resultat ajustat; la victòria del RN és possible en tots els escenaris, però només és gairebé segura en un (les probabilitats són qualitatives i reflecteixen el judici de l'autor de l'informe, no un model).</p>
+      </div>
+      <div class="scen">
+        <article class="sc"><header><h3><span>A.</span>Le Pen contra un centrista</h3><div class="like"><div class="dots"><i class="f"></i><i class="f"></i><i class="f"></i></div><small>Versemblança alta</small></div></header>
+          <dl><div><dt>Què ha de passar</dt><dd>Philippe o Attal es retira abans de març i el bloc central suma per sobre de Mélenchon.</dd></div><div><dt>Resultat probable</dt><dd>Segona volta ajustada (48-52%), decidida per l'abstenció de l'esquerra.</dd></div></dl>
+          <div><div class="mini" aria-hidden="true"><span style="width:52.5%"></span></div><div class="minilab"><span>Le Pen 52–53%</span><span>Philippe 47–48%</span></div></div></article>
+        <article class="sc"><header><h3><span>B.</span>Le Pen contra Glucksmann</h3><div class="like"><div class="dots"><i class="f"></i><i class="f"></i><i></i></div><small>Versemblança mitjana</small></div></header>
+          <dl><div><dt>Què ha de passar</dt><dd>La dinàmica de la primària es consolida i absorbeix part del vot ecologista i central.</dd></div><div><dt>Resultat probable</dt><dd>Segona volta competitiva; Glucksmann capta millor el vot d'esquerra, pitjor el de dreta.</dd></div></dl>
+          <div><div class="mini" aria-hidden="true"><span style="width:55%"></span></div><div class="minilab"><span>Le Pen 55%</span><span>Glucksmann 45%</span></div></div></article>
+        <article class="sc"><header><h3><span>C.</span>Le Pen contra Mélenchon</h3><div class="like"><div class="dots"><i class="f"></i><i class="f"></i><i></i></div><small>Versemblança mitjana</small></div></header>
+          <dl><div><dt>Què ha de passar</dt><dd>Centre i esquerra moderada continuen dividits fins a l'abril.</dd></div><div><dt>Resultat probable</dt><dd>Victòria clara del RN (més del 65% segons els sondejos actuals).</dd></div></dl>
+          <div><div class="mini" aria-hidden="true"><span style="width:68%"></span></div><div class="minilab"><span>Le Pen 67–69%</span><span>Mélenchon 31–33%</span></div></div></article>
+        <article class="sc d"><header><h3><span>D.</span>Disrupció</h3><div class="like"><div class="dots"><i class="f"></i><i></i><i></i></div><small>Baixa, però d'alt impacte</small></div></header>
+          <dl><div><dt>Què ha de passar</dt><dd>Decisió de la Cassació contra Le Pen abans de l'abril, crisi de deute aguda o escàndol nou.</dd></div><div><dt>Resultat probable</dt><dd>Imprevisible: substitució per Bardella, vot de por o mobilització de protesta.</dd></div></dl></article>
+      </div>
+      <p class="note" style="margin-top:var(--s-3)">Barres: duels de segona volta segons els sondejos d'octubre (punt mitjà de la forquilla).</p>
+      <div class="prose">
+        <p>En cas de victòria del RN, s'obre un segon escenari, que l'ECFR no tracta a fons: unes legislatives anticipades i, possiblement, una cohabitació o un govern sense majoria. La capacitat de transformació dependria més del resultat parlamentari que de l'Elisi.</p>
+      </div>
+    </section>
+
+    <!-- CALENDARI -->
+    <section id="calendari">
+      <div class="prose">
+        <span class="secnum">09 · Calendari</span>
+        <h2>Indicadors a vigilar fins a l'abril</h2>
+        <p>Toca un punt de la línia per destacar-ne la fita.</p>
+      </div>
+      <figure aria-labelledby="calT">
+        <h4 id="calT">Sis mesos, set fites</h4>
+        <p class="sub">La franja granat marca el període en què pot arribar la decisió de la Cassació</p>
+        <div class="cal" id="cal"></div>
+        <div class="months" id="months" aria-hidden="true"></div>
+        <ol class="events" id="events">
+          <li id="e1" data-d="2026-10-23"><span class="k">1</span><time>23 d'octubre de 2026</time><div><b>Revisió de Moody's (Aa3, perspectiva negativa)</b><span>Una rebaixa unificaria les tres grans agències en la categoria A i pressionaria el diferencial.</span></div></li>
+          <li id="e2" data-d="2026-11-05"><span class="k">2</span><time>5 de novembre de 2026</time><div><b>Vaga interprofessional</b><span>Si la mobilització beneficia l'esquerra o el RN en els sondejos posteriors (tesi 1).</span></div></li>
+          <li id="e3" data-d="2026-11-27"><span class="k">3</span><time>27 de novembre de 2026</time><div><b>Revisió de S&amp;P (A+, estable)</b><span>Reacció dels mercats en plena tramitació pressupostària.</span></div></li>
+          <li id="e4" data-d="2026-12-15"><span class="k">4</span><time>Desembre de 2026</time><div><b>Votació final del pressupost 2027</b><span>Recurs al 49.3 o moció de censura: una caiguda del govern accentuaria la crisi institucional.</span></div></li>
+          <li id="e5" data-d="2027-01-20"><span class="k">5</span><time>Inici de 2027</time><div><b>Desempat Philippe-Attal</b><span>Si el bloc central arriba unificat, l'escenari A guanya pes.</span></div></li>
+          <li id="e6" data-d="2027-04-01" data-range="1"><span class="k">6</span><time>Fins a l'abril de 2027</time><div><b>Decisió de la Cort de Cassació</b><span>Calendari i sentit de la decisió sobre Le Pen (escenari D).</span></div></li>
+          <li id="e7" class="vote" data-d="2027-04-18"><span class="k">7</span><time>18 d'abril i 2 de maig de 2027</time><div><b>Primera i segona volta</b><span>Les dues voltes de l'elecció presidencial.</span></div></li>
+        </ol>
+        <figcaption>Dates de les agències: Agència France Trésor, citada per <a href="https://selectra.info/finance/actualites/marche/moody-note-france-23-octobre-credit-immobilier">Selectra</a>. Les fites 4 i 5 se situen de manera aproximada a la línia.</figcaption>
+      </figure>
+      <div class="prose">
+        <p>Indicadors continus: el diferencial OAT-Bund (llindar simbòlic de 150 punts bàsics), l'atur trimestral de l'Insee i les dades d'abstenció declarada als sondejos.</p>
+      </div>
+    </section>
+
+    <!-- FONTS -->
+    <section id="fonts">
+      <div class="prose">
+        <span class="secnum">Metodologia</span>
+        <h2>Nota metodològica i fonts</h2>
+        <p>Dades recollides fins al 20 d'octubre de 2026. Els sondejos són fotografies del moment, sense valor predictiu: a sis mesos de la presidencial del 2022, Zemmour tenia un 13% i va acabar amb un 7%. Les fonts secundàries (Économie Matin, Planète Grandes Écoles, EPOC Info) s'han usat només quan reprenen dades primàries identificables (Insee, instituts de sondeig, Institut de l'Entreprise) i haurien de contrastar-se amb l'original abans de publicar. Les tesis i els escenaris són anàlisi pròpia.</p>
+      </div>
+      <div class="src">
+        <div><h3>Anàlisi i think tanks</h3><ul>
+          <li><a href="https://ecfr.eu/publication/if-marine-le-pen-wins-a-european-guide-to-a-far-right-france/">ECFR — If Marine Le Pen wins: A European guide to a far-right France</a> (4 d'agost de 2026)</li>
+          <li><a href="https://ecfr.eu/article/unlikely-europeans-the-hidden-voters-who-could-sway-frances-presidential-election/">ECFR — Unlikely Europeans, Paweł Zerka</a> (8 d'octubre de 2026)</li>
+          <li><a href="https://www.institutmontaigne.org/presidentielle-2022/marine-le-pen/synthese/">Institut Montaigne — xifratge del programa Le Pen 2022</a></li>
+          <li><a href="https://www.optionfinance.fr/analyses/le-spread-oat-bund-une-question-francaise-aux-consequences-europeennes.html">Option Finance — Thierry Million (Allianz GI), sobre el diferencial OAT-Bund</a></li>
+        </ul></div>
+        <div><h3>Economia i finances públiques</h3><ul>
+          <li><a href="https://www.touteleurope.eu/economie-et-social/budget-2027-ce-qu-il-faut-retenir-des-mesures-annoncees-par-le-gouvernement-lecornu/">Toute l'Europe — Pressupost 2027 del govern Lecornu</a></li>
+          <li><a href="https://www.lafinancepourtous.com/2026/10/08/projet-de-loi-de-finances-le-budget-2027-sous-haute-tension/">La finance pour tous — PLF 2027 sota alta tensió</a></li>
+          <li><a href="https://fr.euronews.com/2026/09/11/croissance-la-france-a-la-traine-de-ses-voisins-europeens">Euronews — França, a la cua dels veïns europeus</a></li>
+          <li><a href="https://www.economiematin.fr/?p=231688">Économie Matin — Previsions de l'Insee</a></li>
+          <li><a href="https://www.boursorama.com/actualite-economique/actualites/france-l-insee-prevoit-un-regain-de-croissance-au-deuxieme-trimestre-d5699c3f5bba5395453f8560d3c9e29d">Boursorama / AFP — Nota de conjuntura de l'Insee, juny 2026</a></li>
+          <li><a href="https://selectra.info/finance/actualites/marche/moody-note-france-23-octobre-credit-immobilier">Selectra — Calendari de Moody's i qualificacions</a></li>
+          <li><a href="https://www.planetegrandesecoles.com/?p=130999">Planète Grandes Écoles — Contrapressupost del RN</a></li>
+        </ul></div>
+        <div><h3>Política, justícia i sondejos</h3><ul>
+          <li><a href="https://www.parismatch.be/actualites/monde/2026/07/07/marine-le-pen-condamnee-a-15-mois-ferme-dineligibilite-et-un-an-de-bracelet-electronique-K23HT444CZB4TK7AI7QZLWSCFA/">Paris Match / AFP — Sentència d'apel·lació de Le Pen</a></li>
+          <li><a href="https://www.europe1.fr/node/967896">Europe 1 — Per què Le Pen és elegible</a></li>
+          <li><a href="https://fr.euronews.com/2026/09/28/mediapart-attribue-a-jordan-bardella-des-ecrits-antisemites-le-president-du-rn-denonce-des">Euronews — Mediapart atribueix escrits antisemites a Bardella</a></li>
+          <li><a href="https://fr.euronews.com/2026/10/09/mediapart-apporte-de-nouvelles-preuves-liant-jordan-bardella-aux-ecrits-antisemites-sur-me">Euronews — Noves proves de Mediapart</a></li>
+          <li><a href="https://fr.news.yahoo.com/presidentielle-2027-nouveau-sondage-place-083408974.html">Yahoo Actualités — Sondeig Harris Interactive del 12 d'octubre</a></li>
+          <li><a href="https://lcp.fr/actualites/presidentielle-que-disent-les-sondages-sur-la-candidature-de-raphael-glucksmann-443701">LCP — Què diuen els sondejos de Glucksmann</a></li>
+          <li><a href="https://fr.euronews.com/2026/10/16/presidentielle-2027-raphael-glucksmann-progresse-dans-les-sondages-apres-sa-victoire-a-la-">Euronews — Glucksmann progressa després de la primària</a></li>
+          <li><a href="https://www.publicsenat.fr/actualites/politique/sondage-presidentielle-2027-marine-le-pen-largement-en-tete-suivi-de-jean-luc-melenchon-et-edouard-philippe-a-egalite">Public Sénat — Sondeig Cluster 17</a></li>
+          <li><a href="https://www.europe1.fr/node/969987">Europe 1 — El PS opta per una primària tancada</a></li>
+          <li><a href="https://www.europe1.fr/politique/presidentielle-2027-le-duel-attal-philippe-peut-il-profiter-a-bruno-retailleau-938282">Europe 1 — El duel Attal-Philippe i Retailleau</a></li>
+          <li><a href="https://www.epocinfo.fr/ep2027.php">EPOC Info — Agregador de sondejos</a></li>
+          <li><a href="https://www.economiematin.fr/?p=233381">Économie Matin — Vaga del 5 de novembre</a></li>
+          <li><a href="https://www.economiematin.fr/?p=233995">Économie Matin — Sondejos d'octubre i prioritats</a></li>
+          <li><a href="https://dettedelafrance.fr/">dettedelafrance.fr — Rebuig del PLF a comissió</a></li>
+        </ul></div>
+      </div>
+    </section>
+  </main>
+</div>
+</div>
+
+<footer class="wrap">
+  <div class="inner">
+    <span class="brand">Estat <em>del</em> Món</span>
+    <span class="kicker">Presidencials franceses de 2027 · 20 d'octubre de 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const fmt = (n, d=1) => n.toLocaleString('ca-ES', {minimumFractionDigits:d, maximumFractionDigits:d});
+  const fmtR = (a,b,d=0) => a===b ? fmt(a,d)+'%' : fmt(a,d)+'–'+fmt(b,d)+'%';
+
+  /* Countdown */
+  const vote = new Date('2027-04-18T08:00:00+02:00');
+  const days = Math.max(0, Math.ceil((vote - new Date())/86400000));
+  document.getElementById('days').textContent = days.toLocaleString('ca-ES');
+  document.getElementById('daysLabel').textContent = days === 1 ? 'dia' : 'dies';
+
+  /* First round ranges */
+  const cand = [
+    {n:'Marine Le Pen', p:'RN', lo:32, hi:36, rn:true},
+    {n:'Jean-Luc Mélenchon', p:'LFI', lo:15, hi:19},
+    {n:'Édouard Philippe', p:'Horitzons', lo:15, hi:18},
+    {n:'Raphaël Glucksmann', p:'PS / Place publique', lo:12.5, hi:16},
+    {n:'Gabriel Attal', p:'Renaissance', lo:11, hi:11},
+    {n:'Bruno Retailleau', p:'LR', lo:7, hi:9}
+  ];
+  const MAX = 40, x = v => (v/MAX*100);
+  const range = document.getElementById('range');
+  let h = '<div class="plot"><div class="band" style="left:'+x(15)+'%;width:'+(x(19)-x(15))+'%"><span>Empat per la 2a plaça</span></div></div>';
+  cand.forEach(c => {
+    const pt = c.lo === c.hi;
+    const lab = pt ? fmt(c.lo,0)+'%' : fmtR(c.lo,c.hi, c.lo%1||c.hi%1 ? 1 : 0).replace(',0','');
+    h += '<div class="rrow'+(c.rn?' rn':'')+'" tabindex="0" title="'+c.n+': '+lab+'"><div class="rname">'+c.n+'<small>'+c.p+'</small></div>'+
+      '<div class="track"><span class="bar'+(pt?' pt':'')+'" style="left:'+(pt? 'calc('+x(c.lo)+'% - 5px)' : x(c.lo)+'%')+';width:'+(x(c.hi)-x(c.lo))+'%"></span></div>'+
+      '<div class="rval">'+lab+'</div></div>';
+  });
+  h += '<div class="axis" aria-hidden="true"><span></span><div class="ticks">'+[0,10,20,30,40].map(t=>'<span style="left:'+x(t)+'%">'+t+'%</span>').join('')+'</div><span></span></div>';
+  range.innerHTML = h;
+
+  /* Duel */
+  const duels = {
+    philippe:{n:'Édouard Philippe', lo:47, hi:48, note:"El duel més ajustat. El YouGov dona a Le Pen un 52-48; Philippe es manté a uns 5 punts, dins l'abast d'una mobilització del vot d'esquerra i de la dreta clàssica."},
+    glucksmann:{n:'Raphaël Glucksmann', lo:45, hi:45, note:"Un marge d'uns 10 punts. Glucksmann capta millor el vot d'esquerra, pitjor el de dreta (escenari B)."},
+    melenchon:{n:'Jean-Luc Mélenchon', lo:31, hi:33, note:"Le Pen superaria el 67%: amb Mélenchon a la segona volta, el «front republicà» no es mobilitza (escenari C)."}
+  };
+  const L = document.getElementById('duelL'), U = document.getElementById('duelU');
+  function setDuel(k){
+    const d = duels[k]; if(!d) return;
+    const mid = (d.lo+d.hi)/2, lp = 100-mid;
+    L.style.width = lp+'%';
+    U.style.left = (100-d.hi)+'%'; U.style.width = (d.hi-d.lo)+'%';
+    document.getElementById('duelLv').textContent = fmtR(100-d.hi, 100-d.lo);
+    document.getElementById('duelRv').textContent = fmtR(d.lo, d.hi);
+    document.getElementById('duelName').textContent = d.n;
+    document.getElementById('duelNote').textContent = d.note;
+    document.getElementById('duel').setAttribute('aria-label', 'Le Pen '+fmtR(100-d.hi,100-d.lo)+' davant '+d.n+' '+fmtR(d.lo,d.hi));
+    document.querySelectorAll('#duelBtns button[data-k]').forEach(b => b.setAttribute('aria-pressed', b.dataset.k===k));
+  }
+  document.getElementById('duelBtns').addEventListener('click', e => { const b = e.target.closest('button[data-k]'); if(b) setDuel(b.dataset.k); });
+  setDuel('philippe');
+
+  /* Macro */
+  const mac = {
+    def:{t:"El dèficit puja al 5,4% el 2026, gairebé el doble del límit europeu del 3%", s:"Dèficit públic, % del PIB", vals:[{v:5.1},{v:5.4,hi:true},{v:5.0,proj:true,lab:'objectiu del govern'}], max:6, ref:{v:3,l:'Límit europeu 3%'}, d:1,
+      c:'PLF 2027 (<a href="https://www.touteleurope.eu/economie-et-social/budget-2027-ce-qu-il-faut-retenir-des-mesures-annoncees-par-le-gouvernement-lecornu/">Toute l\'Europe</a>). 2027: objectiu del projecte de pressupost.'},
+    debt:{t:"El deute continua pujant: del 115,7% al 121,7% del PIB en dos anys", s:"Deute públic, % del PIB", vals:[{v:115.7},{v:119.3},{v:121.7,proj:true,hi:true,lab:'previsió PLF'}], max:130, d:1,
+      c:'PLF 2027 (<a href="https://www.lafinancepourtous.com/2026/10/08/projet-de-loi-de-finances-le-budget-2027-sous-haute-tension/">La finance pour tous</a>).'},
+    gdp:{t:"El creixement cau al 0,4% el 2026, menys de la meitat que la zona euro", s:"Creixement del PIB, %", vals:[{v:0.9},{v:0.4,hi:true,lab:'Insee · govern: 0,5'},{v:1.0,proj:true,lab:'previsió del govern'}], max:1.4, ref:{v:1.0,l:'Zona euro 2026: 1% (OCDE)'}, d:1,
+      c:'Insee i govern francès (<a href="https://fr.euronews.com/2026/09/11/croissance-la-france-a-la-traine-de-ses-voisins-europeens">Euronews</a>); zona euro: OCDE.'},
+    unemp:{t:"L'atur s'enfila fins al 8,4-8,6% a final del 2026", s:"Taxa d'atur a final d'any, %", vals:[{v:7.9},{v:8.5,lo:8.4,up:8.6,hi:true,lab:'forquilla Insee'},null], max:10, d:1,
+      c:'Insee (<a href="https://www.economiematin.fr/?p=231688">Économie Matin</a>). Sense previsió publicada per al 2027.'}
+  };
+  const bars = document.getElementById('bars');
+  function setMac(k){
+    const m = mac[k];
+    document.getElementById('macT').textContent = m.t;
+    document.getElementById('macS').textContent = m.s;
+    document.getElementById('macC').innerHTML = m.c;
+    let out = '';
+    m.vals.forEach(o => {
+      if(!o){ out += '<div class="col"><div class="v"><small>sense dada</small></div></div>'; return; }
+      const hgt = o.v/m.max*100;
+      const val = o.lo ? fmt(o.lo,1)+'–'+fmt(o.up,1)+'%' : fmt(o.v,m.d)+'%';
+      const whisk = o.lo ? '<span class="whisk" style="bottom:'+(o.lo/m.max*100)+'%;height:'+((o.up-o.lo)/m.max*100)+'%"></span>' : '';
+      out += '<div class="col"><div class="v'+(o.hi?' hi':'')+'">'+val+(o.lab?'<small>'+o.lab+'</small>':'')+'</div>'+
+        '<div class="b'+(o.proj?' proj':'')+(o.hi && !o.proj?' hi':'')+'" style="height:'+hgt+'%" title="'+val+'"></div>'+whisk+'</div>';
+    });
+    if(m.ref) out += '<div class="ref" style="bottom:'+(m.ref.v/m.max*100)+'%"><span>'+m.ref.l+'</span></div>';
+    bars.innerHTML = out;
+    bars.setAttribute('aria-label', m.t);
+    document.querySelectorAll('#macBtns button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k===k));
+  }
+  document.getElementById('macBtns').addEventListener('click', e => { const b = e.target.closest('button[data-k]'); if(b) setMac(b.dataset.k); });
+  setMac('def');
+
+  /* Timeline filters */
+  const on = {just:true, med:true, son:true};
+  document.querySelectorAll('.chip[data-f]').forEach(c => c.addEventListener('click', () => {
+    const f = c.dataset.f; on[f] = !on[f];
+    if(!on.just && !on.med && !on.son){ on[f] = true; return; }
+    c.setAttribute('aria-pressed', on[f]);
+    document.querySelectorAll('#tl li').forEach(li => li.hidden = !on[li.dataset.cat]);
+  }));
+
+  /* Calendar */
+  const t0 = Date.parse('2026-10-01'), t1 = Date.parse('2027-05-10');
+  const pos = d => Math.min(100, Math.max(0, (Date.parse(d)-t0)/(t1-t0)*100));
+  const cal = document.getElementById('cal');
+  const now = new Date(); const nowISO = now.toISOString().slice(0,10);
+  let c = '<div class="line"></div><div class="cass" style="left:'+pos(nowISO)+'%;width:'+(pos('2027-04-17')-pos(nowISO))+'%"></div>';
+  if(Date.parse(nowISO) >= t0 && Date.parse(nowISO) <= t1) c += '<div class="today" style="left:'+pos(nowISO)+'%"><span>avui</span></div>';
+  document.querySelectorAll('#events li').forEach((li,i) => {
+    if(li.dataset.range) return;
+    const isVote = li.classList.contains('vote');
+    c += '<button type="button" id="cb'+(i+1)+'" class="'+(isVote?'vote':'')+'" style="left:'+pos(li.dataset.d)+'%" data-e="'+li.id+'" aria-label="Fita '+(i+1)+'">'+(i+1)+'</button>';
+  });
+  c += '<button type="button" id="cb7b" class="vote" style="left:'+pos('2027-05-02')+'%" data-e="e7" aria-label="Segona volta">7</button>';
+  c += '<button type="button" id="cb6" style="left:'+pos('2027-02-20')+'%" data-e="e6" aria-label="Fita 6: decisió de la Cassació">6</button>';
+  cal.innerHTML = c;
+  const mnames = ['oct.','nov.','des.','gen. 2027','febr.','març','abr.','maig'];
+  const mdates = ['2026-10-01','2026-11-01','2026-12-01','2027-01-01','2027-02-01','2027-03-01','2027-04-01','2027-05-01'];
+  document.getElementById('months').innerHTML = mdates.map((d,i)=>'<span style="left:'+pos(d)+'%">'+mnames[i]+'</span>').join('');
+  cal.addEventListener('click', e => {
+    const b = e.target.closest('button[data-e]'); if(!b) return;
+    document.querySelectorAll('#events li').forEach(li => li.classList.toggle('on', li.id === b.dataset.e));
+    cal.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.e === b.dataset.e));
+  });
+
+  /* Scrollspy + progress */
+  const links = [...document.querySelectorAll('.toc a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  const prog = document.getElementById('prog');
+  function onScroll(){
+    const st = window.scrollY, dh = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (dh>0 ? st/dh*100 : 0)+'%';
+    let cur = 0;
+    secs.forEach((s,i) => { if(s && s.getBoundingClientRect().top < window.innerHeight*0.3) cur = i; });
+    links.forEach((a,i) => a.classList.toggle('on', i===cur));
+    const act = links[cur]; const toc = act.closest('.toc');
+    if(toc.scrollWidth > toc.clientWidth){ const r = act.getBoundingClientRect(), tr = toc.getBoundingClientRect(); if(r.left < tr.left || r.right > tr.right) toc.scrollLeft += r.left - tr.left - 16; }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
